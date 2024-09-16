@@ -29,7 +29,7 @@ let student = {
 console.log(student["grades"]["math"]); 
 
 //Câu 4:
-let product = {
+let products = {
     "banh": 5,
     "keo": 6,
     "tay": 7,
