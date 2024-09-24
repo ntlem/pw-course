@@ -1,20 +1,23 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 
-test ('Add Product',async({page})=>{
-    // Truy cập vào trang web
-    await page.goto("https://material.playwrightvn.com");
+test('Add Product', async ({ page }) => {
 
-    //Click vào bài 2
-    await page.click('//a[@href="02-xpath-product-page.html"]');
+    await test.step("Navigate to Material Playwright Page", async () => {
+        await page.goto("https://material.playwrightvn.com");
+    });
 
-    // Chọn sản phẩm 1: 2 sản phẩm
-    await page.locator('//button[@data-product-id="1"]').dblclick();
+    await test.step("Click on to Product Page", async () => {
+        await page.locator('//a[@href="02-xpath-product-page.html"]').click();
+    });
 
-    // Chọn sản phẩm 2: 3 sản phẩm
-    await page.locator('//button[@data-product-id="2"]').dblclick();
-    await page.locator('//button[@data-product-id="2"]').click();
-
-    // Chọn sản phẩm 3: 1 sản phẩm
-    await page.locator('//button[@data-product-id="3"]').click();
+    await test.step("Add Product 1: 2 itmes", async () => {
+        await page.locator('//button[@data-product-id="1"]').click({ clickCount: 2 });
+    });
+    await test.step("Add Product 2: 3 itmes", async () => {
+        await page.locator('//button[@data-product-id="2"]').click({ clickCount: 3 });
+    });
+    await test.step("Add Product 3: 1 itmes", async () => {
+        await page.locator('//button[@data-product-id="3"]').click();
+    });
 
 });
