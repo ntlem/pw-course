@@ -10,7 +10,6 @@ const color = "#808080";
 
 
 test('input test', async ({ page }) => {
-
   await test.step("Navigate to Material Playwright Page", async () => {
     await page.goto("https://material.playwrightvn.com/");
   });
@@ -44,7 +43,4 @@ test('input test', async ({ page }) => {
   await test.step("Click Register button",async()=>{
     await page.locator('//button[normalize-space()="Register"]').click();
   })
-
-
-
 });

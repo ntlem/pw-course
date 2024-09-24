@@ -1,7 +1,6 @@
 import { test } from '@playwright/test';
 
 test('Add Product', async ({ page }) => {
-
     await test.step("Navigate to Material Playwright Page", async () => {
         await page.goto("https://material.playwrightvn.com");
     });
@@ -19,5 +18,4 @@ test('Add Product', async ({ page }) => {
     await test.step("Add Product 3: 1 itmes", async () => {
         await page.locator('//button[@data-product-id="3"]').click();
     });
-
 });

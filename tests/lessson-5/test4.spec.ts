@@ -29,6 +29,4 @@ test('Add Peronal Notes', async ({ page }) => {
         let search = "Thép";
         await page.locator('//input[@type="text" and @id="search"]').fill(search);
     });
-
-
 });
