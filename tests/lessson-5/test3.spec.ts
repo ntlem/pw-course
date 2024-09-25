@@ -22,10 +22,8 @@ test('Add todo', async ({ page }) => {
             await dialog.accept();
         });
 
-        for (let i = 1; i <= 100; i++) {
-            if (i % 2 !== 0) {
+        for (let i = 1; i <= 100; i+=2) {
                 await page.locator(`//button[@id="todo-${i}-delete"]`).click();
-            }
         }
     });
 });
